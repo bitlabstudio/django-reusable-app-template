@@ -33,6 +33,7 @@ VAR_KEYWORDS='django, app, reusable'
 # ============================================================================
 
 rm -rf .git
+rm README.rst
 CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 "${CMD[@]}" | xargs -0 sed -i "" "s#VAR_FULL_NAME#${VAR_FULL_NAME}#g"
 "${CMD[@]}" | xargs -0 sed -i "" "s#VAR_AUTHOR_EMAIL#${VAR_AUTHOR_EMAIL}#g"
@@ -44,6 +45,7 @@ CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 "${CMD[@]}" | xargs -0 sed -i "" "s#VAR_KEYWORDS#${VAR_KEYWORDS}#g"
 mv package_name $VAR_PACKAGE_NAME
 rm init.sh
+mv NEW_README.rst README.rst
 git init
 git add .
 git commit -am "Initial commit"

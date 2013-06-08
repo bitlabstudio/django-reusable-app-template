@@ -1,60 +1,30 @@
-VAR_APP_NAME
-============
+Django Reusable App Template
+============================
 
-VAR_DESCRIPTION
+This repository aims to help you to kickstart new reusable Django apps with
+just a few commands:
 
-Installation
-------------
+    git clone git://github.com/mbrochh/django-reusable-app-template.git your-app-name
+    cd your-app-name
+    nano init.sh
+    # change all variables to your needs
+    ./init.sh
 
-To get the latest stable release from PyPi::
+After this you can create the virtual environment or your app:
 
-    $ pip install VAR_PYPI_NAME
+    mkvirtualenv -p python2.7 your-app-name
+    python setup.py install
+    pip install -r test_requirements.txt
 
-To get the latest commit from GitHub::
+Now you can run the tests:
 
-    $ pip install -e git+git://VAR_GITHUB_REPO.git#egg=VAR_PACKAGE_NAME
+    ./your-app-name/tests/runtests.sh
 
-TODO: Describe further installation steps (edit / remove the examples below):
+Or you can initiate the database and preview your app in the browser:
 
-Add ``VAR_PACKAGE_NAME`` to your ``INSTALLED_APPS``::
+    ./manage.py syncdb --all
+    ./manage.py migrate --fake
+    ./manage.py runserver
 
-    INSTALLED_APPS = (
-        ...,
-        'VAR_PACKAGE_NAME',
-    )
-
-Add the ``VAR_PACKAGE_NAME`` URLs to your ``urls.py``::
-
-    urlpatterns = patterns('',
-        ...
-        url(r'^VAR_URL_HOOK/', include('VAR_PACKAGE_NAME.urls')),
-    )
-
-Don't forget to migrate your database::
-
-    ./manage.py migrate VAR_PACKAGE_NAME
-
-
-Usage
------
-
-TODO: Describe usage or point to docs. Also describe available settings and
-templatetags.
-
-
-Contribute
-----------
-
-If you want to contribute to this project, please perform the following steps::
-
-    # Fork this repository
-    # Clone your fork
-    $ mkvirtualenv -p python2.7 VAR_PYPI_NAME
-    $ python setup.py install
-    $ pip install -r dev_requirements.txt
-
-    $ git co -b feature_branch master
-    # Implement your feature and tests
-    $ git add . && git commit
-    $ git push -u origin feature_branch
-    # Send us a pull request for your feature branch
+The only URL that is hooked up will be the admin url, so you can open 
+`localhost:8000/admin/`.
