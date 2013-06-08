@@ -5,7 +5,8 @@ DEBUG = True
 
 SITE_ID = 1
 
-PROJECT_ROOT = os.path.dirname(__file__)
+APP_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..'))
 
 
 DATABASES = {
@@ -18,18 +19,18 @@ DATABASES = {
 ROOT_URLCONF = 'VAR_PACKAGE_NAME.tests.urls'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(__file__, '../../static/')
-MEDIA_ROOT = os.path.join(__file__, '../../media/')
+STATIC_ROOT = os.path.join(APP_ROOT, '../static')
+MEDIA_ROOT = os.path.join(APP_ROOT, '../media')
 STATICFILES_DIRS = (
-    os.path.join(__file__, 'test_static'),
+    os.path.join(APP_ROOT, 'static'),
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'test_app/templates'),
+    os.path.join(APP_ROOT, 'tests/test_app/templates'),
 )
 
 COVERAGE_REPORT_HTML_OUTPUT_DIR = os.path.join(
-    os.path.dirname(__file__), 'coverage')
+    os.path.join(APP_ROOT, 'tests/coverage'))
 COVERAGE_MODULE_EXCLUDES = [
     'tests$', 'settings$', 'urls$', 'locale$',
     'migrations', 'fixtures', 'admin$', 'django_extensions',

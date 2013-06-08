@@ -1,5 +1,8 @@
-*.pyc
 *.egg-info/
+*.pyc
 *coverage/
+db.sqlite
 dist/
 docs/_build/
+media/
+static/
