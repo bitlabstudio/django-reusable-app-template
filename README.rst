@@ -2,7 +2,7 @@ Django Reusable App Template
 ============================
 
 This repository aims to help you to kickstart new reusable Django apps with
-just a few commands:
+just a few commands::
 
     git clone git://github.com/mbrochh/django-reusable-app-template.git your-app-name
     cd your-app-name
@@ -10,17 +10,17 @@ just a few commands:
     # change all variables to your needs
     ./init.sh
 
-After this you can create the virtual environment or your app:
+After this you can create the virtual environment or your app::
 
     mkvirtualenv -p python2.7 your-app-name
     python setup.py install
     pip install -r test_requirements.txt
 
-Now you can run the tests:
+Now you can run the tests::
 
     ./your-app-name/tests/runtests.sh
 
-Or you can initiate the database and preview your app in the browser:
+Or you can initiate the database and preview your app in the browser::
 
     ./manage.py syncdb --all
     ./manage.py migrate --fake
