@@ -1,6 +1,8 @@
 Django Reusable App Template
 ============================
 
+TODO: Add link to slides and video in here once it is uploaded.
+
 This repository aims to help you to kickstart new reusable Django apps with
 just a few commands::
 
