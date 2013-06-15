@@ -1,10 +1,15 @@
 Django Reusable App Template
 ============================
 
-TODO: Add link to slides and video in here once it is uploaded.
+This repository aims to help you to kickstart new reusable Django apps within
+a few minutes.
 
-This repository aims to help you to kickstart new reusable Django apps with
-just a few commands::
+It was presented at PyCon Singapore 2013 for the first time, you can find the
+slides of the talk here: https://speakerdeck.com/mbrochh/writing-publishing-and-maintaining-reusable-django-apps
+
+A video will follow soon.
+
+In order to kickstart your new reusable app, just do the following::
 
     git clone git://github.com/bitmazk/django-reusable-app-template.git your-app-name
     cd your-app-name
@@ -28,5 +33,5 @@ Or you can initiate the database and preview your app in the browser::
     ./manage.py migrate --fake
     ./manage.py runserver
 
-The only URL that is hooked up will be the admin url, so you can open 
+The only URL that is hooked up will be the admin url, so you can open
 `localhost:8000/admin/`.
