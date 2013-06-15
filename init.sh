@@ -49,3 +49,4 @@ mv NEW_README.rst README.rst
 git init
 git add .
 git commit -am "Initial commit"
+echo "All done! Don't forget to fix the first headline in README.rst!"
