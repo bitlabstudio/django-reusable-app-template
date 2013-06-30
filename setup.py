@@ -13,7 +13,7 @@ should check if you are uploading the correct files:
 
 Inspect the output thoroughly. There shouldn't be any temp files and if your
 app includes staticfiles or templates, make sure that they appear in the list.
-If somethign is wrong, you need to edit MANIFEST.in and run the command again.
+If something is wrong, you need to edit MANIFEST.in and run the command again.
 
 If all looks good, you can make your first release:
 
