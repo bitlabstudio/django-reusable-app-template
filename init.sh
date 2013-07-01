@@ -46,6 +46,7 @@ CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 mv package_name $VAR_PACKAGE_NAME
 rm init.sh
 mv NEW_README.rst README.rst
+mv NEW_AUTHORS AUTHORS
 git init
 git add .
 git commit -am "Initial commit"
