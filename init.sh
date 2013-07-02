@@ -30,6 +30,10 @@ VAR_GITHUB_REPO='github.com/mbrochh/django-reusable-app-template'
 # Keywords for your app, used in setup.py
 VAR_KEYWORDS='django, app, reusable'
 
+# Current year, will be shown in the license file. You can set it to any year
+# (i.e. 2001) or just leave this default and compute it automatically
+VAR_YEAR=`date +'%Y'`
+
 # ============================================================================
 
 rm -rf .git
