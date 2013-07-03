@@ -9,7 +9,9 @@ slides of the talk here: https://speakerdeck.com/mbrochh/writing-publishing-and-
 
 A video of the talk can be found here: http://youtu.be/a4S1kTJfezA 
 
-In order to kickstart your new reusable app, just do the following::
+In order to kickstart your new reusable app, just do the following
+
+.. code-block:: bash
 
     git clone git://github.com/bitmazk/django-reusable-app-template.git your-app-name
     cd your-app-name
@@ -17,17 +19,23 @@ In order to kickstart your new reusable app, just do the following::
     # change all variables to your needs
     ./init.sh
 
-After this you can create the virtual environment or your app::
+After this you can create the virtual environment or your app
+
+.. code-block:: bash
 
     mkvirtualenv -p python2.7 your-app-name
     python setup.py install
     pip install -r test_requirements.txt
 
-Now you can run the tests::
+Now you can run the tests
+
+.. code-block:: bash
 
     ./your-app-name/tests/runtests.sh
 
-Or you can initiate the database and preview your app in the browser::
+Or you can initiate the database and preview your app in the browser
+
+.. code-block:: bash
 
     ./manage.py syncdb --all
     ./manage.py migrate --fake
@@ -37,7 +45,9 @@ The only URL that is hooked up will be the admin url, so you can open
 `localhost:8000/admin/`.
 
 Once you have implemented your app, you can publish it on the Python Package
-Index like so::
+Index like so
+
+.. code-block:: bash
 
     python setup.py register
     python setup.py sdist upload
