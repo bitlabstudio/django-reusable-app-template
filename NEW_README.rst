@@ -6,31 +6,41 @@ VAR_DESCRIPTION
 Installation
 ------------
 
-To get the latest stable release from PyPi::
+To get the latest stable release from PyPi
+
+.. code-block:: bash
 
     $ pip install VAR_PYPI_NAME
 
-To get the latest commit from GitHub::
+To get the latest commit from GitHub
+
+.. code-block:: bash
 
     $ pip install -e git+git://VAR_GITHUB_REPO.git#egg=VAR_PACKAGE_NAME
 
 TODO: Describe further installation steps (edit / remove the examples below):
 
-Add ``VAR_PACKAGE_NAME`` to your ``INSTALLED_APPS``::
+Add ``VAR_PACKAGE_NAME`` to your ``INSTALLED_APPS``
+
+.. code-block:: python
 
     INSTALLED_APPS = (
         ...,
         'VAR_PACKAGE_NAME',
     )
 
-Add the ``VAR_PACKAGE_NAME`` URLs to your ``urls.py``::
+Add the ``VAR_PACKAGE_NAME`` URLs to your ``urls.py``
+
+.. code-block:: python
 
     urlpatterns = patterns('',
         ...
         url(r'^VAR_URL_HOOK/', include('VAR_PACKAGE_NAME.urls')),
     )
 
-Don't forget to migrate your database::
+Don't forget to migrate your database
+
+.. code-block:: bash
 
     ./manage.py migrate VAR_PACKAGE_NAME
 
@@ -45,7 +55,9 @@ templatetags.
 Contribute
 ----------
 
-If you want to contribute to this project, please perform the following steps::
+If you want to contribute to this project, please perform the following steps
+
+.. code-block:: bash
 
     # Fork this repository
     # Clone your fork
