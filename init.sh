@@ -39,15 +39,16 @@ VAR_YEAR=`date +'%Y'`
 rm -rf .git
 rm README.rst
 CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_YEAR#$(date +%Y)#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_FULL_NAME#${VAR_FULL_NAME}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_AUTHOR_EMAIL#${VAR_AUTHOR_EMAIL}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_APP_NAME#${VAR_APP_NAME}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_PACKAGE_NAME#${VAR_PACKAGE_NAME}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_PYPI_NAME#${VAR_PYPI_NAME}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_DESCRIPTION#${VAR_DESCRIPTION}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_GITHUB_REPO#${VAR_GITHUB_REPO}#g"
-"${CMD[@]}" | xargs -0 sed -i "" "s#VAR_KEYWORDS#${VAR_KEYWORDS}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_YEAR#$(date +%Y)#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_FULL_NAME#${VAR_FULL_NAME}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_AUTHOR_EMAIL#${VAR_AUTHOR_EMAIL}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_APP_NAME#${VAR_APP_NAME}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_PACKAGE_NAME#${VAR_PACKAGE_NAME}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_PYPI_NAME#${VAR_PYPI_NAME}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_DESCRIPTION#${VAR_DESCRIPTION}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_GITHUB_REPO#${VAR_GITHUB_REPO}#g"
+"${CMD[@]}" | xargs -0 sed -i .sed "s#VAR_KEYWORDS#${VAR_KEYWORDS}#g"
+find . -name "*.sed" -exec rm -rf {} \;
 mv package_name $VAR_PACKAGE_NAME
 rm init.sh
 mv NEW_README.rst README.rst
