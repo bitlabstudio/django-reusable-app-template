@@ -39,7 +39,7 @@ VAR_YEAR=`date +'%Y'`
 rm -rf .git
 rm README.rst
 CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
-"${CMD[@]}" | xargs -0 perl -pi -e s#VAR_YEAR#$(date +%Y)#g
+"${CMD[@]}" | xargs -0 perl -pi -e s#VAR_YEAR#${VAR_YEAR}#g
 "${CMD[@]}" | xargs -0 perl -pi -e s#VAR_FULL_NAME#${VAR_FULL_NAME}#g
 "${CMD[@]}" | xargs -0 perl -pi -e s#VAR_AUTHOR_EMAIL#${VAR_AUTHOR_EMAIL}#g
 "${CMD[@]}" | xargs -0 perl -pi -e s#VAR_APP_NAME#${VAR_APP_NAME}#g
