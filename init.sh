@@ -17,7 +17,7 @@ VAR_APP_NAME='Django Reusable App Template'
 VAR_PACKAGE_NAME='reusable_app_template'
 
 # Example URL path the app should be loaded at
-VAR_URL_HOOK='reusable_app_template'
+VAR_URL_HOOK='app-url'
 
 # The package name as defined in setup.py - this is also what you would search
 # for on pypi.python.org. You should search pypi.python.org first and make sure
