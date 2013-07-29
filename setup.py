@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 """
 Python setup file for the VAR_PACKAGE_NAME app.
 
