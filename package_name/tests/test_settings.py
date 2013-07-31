@@ -19,8 +19,8 @@ DATABASES = {
 ROOT_URLCONF = 'VAR_PACKAGE_NAME.tests.urls'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(APP_ROOT, '../static')
-MEDIA_ROOT = os.path.join(APP_ROOT, '../media')
+STATIC_ROOT = os.path.join(APP_ROOT, '../app_static')
+MEDIA_ROOT = os.path.join(APP_ROOT, '../app_media')
 STATICFILES_DIRS = (
     os.path.join(APP_ROOT, 'static'),
 )

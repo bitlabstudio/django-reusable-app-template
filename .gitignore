@@ -4,5 +4,5 @@
 db.sqlite
 dist/
 docs/_build/
-media/
-static/
+app_media/
+app_static/
