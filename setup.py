@@ -32,6 +32,15 @@ from setuptools import setup, find_packages
 import VAR_PACKAGE_NAME as app
 
 
+dev_requires = [
+    'flake8',
+]
+
+install_requires = [
+    'django',
+]
+
+
 def read(fname):
     try:
         return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -51,7 +60,8 @@ setup(
     url="https://VAR_GITHUB_REPO",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[
-        'django',
-    ],
+    install_requires=install_requires,
+    extras_require={
+        'dev': dev_requires,
+    },
 )
