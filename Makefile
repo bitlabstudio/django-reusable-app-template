@@ -8,5 +8,5 @@ setup-git:
 
 lint-python:
 	@echo "Linting Python files"
-	PYFLAKES_NODOCTEST=1 flake8 bower
+	PYFLAKES_NODOCTEST=1 flake8 VAR_PACKAGE_NAME
 	@echo ""
