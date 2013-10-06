@@ -38,6 +38,13 @@ Add the ``VAR_PACKAGE_NAME`` URLs to your ``urls.py``
         url(r'^VAR_URL_HOOK/', include('VAR_PACKAGE_NAME.urls')),
     )
 
+Before your tags/filters are available in your templates, load them by using
+
+.. code-block:: html
+
+	{% load VAR_PACKAGE_NAME_tags %}
+
+
 Don't forget to migrate your database
 
 .. code-block:: bash
