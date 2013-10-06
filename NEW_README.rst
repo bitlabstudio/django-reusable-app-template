@@ -10,13 +10,13 @@ To get the latest stable release from PyPi
 
 .. code-block:: bash
 
-    $ pip install VAR_PYPI_NAME
+    pip install VAR_PYPI_NAME
 
 To get the latest commit from GitHub
 
 .. code-block:: bash
 
-    $ pip install -e git+git://VAR_GITHUB_REPO.git#egg=VAR_PACKAGE_NAME
+    pip install -e git+git://VAR_GITHUB_REPO.git#egg=VAR_PACKAGE_NAME
 
 TODO: Describe further installation steps (edit / remove the examples below):
 
@@ -61,12 +61,12 @@ If you want to contribute to this project, please perform the following steps
 
     # Fork this repository
     # Clone your fork
-    $ mkvirtualenv -p python2.7 VAR_PYPI_NAME
-    $ python setup.py install
-    $ pip install -r dev_requirements.txt
+    mkvirtualenv -p python2.7 VAR_PYPI_NAME
+    python setup.py install
+    pip install -r dev_requirements.txt
 
-    $ git co -b feature_branch master
+    git co -b feature_branch master
     # Implement your feature and tests
-    $ git add . && git commit
-    $ git push -u origin feature_branch
+    git add . && git commit
+    git push -u origin feature_branch
     # Send us a pull request for your feature branch
