@@ -53,9 +53,10 @@ CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_KEYWORDS#${VAR_KEYWORDS}#g"
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_URL_HOOK#${VAR_URL_HOOK}#g"
 mv package_name $VAR_PACKAGE_NAME
-mv static/package_name static/$VAR_PACKAGE_NAME
-mv templates/package_name templates/$VAR_PACKAGE_NAME
-mv templatetags/package_name_tags.py templatetags/$VAR_PACKAGE_NAME_tags.py
+mv $VAR_PACKAGE_NAME/static/package_name  $VAR_PACKAGE_NAME/static/$VAR_PACKAGE_NAME
+mv $VAR_PACKAGE_NAME/templates/package_name  $VAR_PACKAGE_NAME/templates/$VAR_PACKAGE_NAME
+mv $VAR_PACKAGE_NAME/templatetags/package_name_tags.py  $VAR_PACKAGE_NAME/templatetags/${VAR_PACKAGE_NAME}_tags.py
+ 
 
 rm init.sh
 mv NEW_README.rst README.rst
