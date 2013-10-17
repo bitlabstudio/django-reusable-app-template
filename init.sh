@@ -6,7 +6,7 @@
 VAR_FULL_NAME='Your Name'
 
 # Your email address, used in setup.py, shown on pypi.python.org
-VAR_AUTHOR_EMAIL='yourmail@gmail.com'
+export VAR_AUTHOR_EMAIL='yourmail@gmail.com'
 
 # The project name as it would appear as the main headline in the README
 # You should google for your app name first and make sure that no one else has
@@ -44,7 +44,7 @@ rm README.rst
 CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_YEAR#${VAR_YEAR}#g"
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_FULL_NAME#${VAR_FULL_NAME}#g"
-"${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_AUTHOR_EMAIL#${VAR_AUTHOR_EMAIL}#g"
+"${CMD[@]}" | xargs -0 perl -pi -e 's#VAR_AUTHOR_EMAIL#$ENV{VAR_AUTHOR_EMAIL}#g'
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_APP_NAME#${VAR_APP_NAME}#g"
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_PACKAGE_NAME#${VAR_PACKAGE_NAME}#g"
 "${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_PYPI_NAME#${VAR_PYPI_NAME}#g"
