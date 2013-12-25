@@ -11,6 +11,8 @@ import sys
 
 from django.conf import settings
 
+import coverage
+
 import test_settings
 
 
@@ -24,7 +26,11 @@ from django_nose import NoseTestSuiteRunner
 
 class NoseCoverageTestRunner(CoverageRunner, NoseTestSuiteRunner):
     """Custom test runner that uses nose and coverage"""
-    pass
+    def run_tests(self, *args, **kwargs):
+        results = super(NoseCoverageTestRunner, self).run_tests(
+            *args, **kwargs)
+        coverage._the_coverage.data.write_file('.coverage')
+        return results
 
 
 def runtests(*test_args):
