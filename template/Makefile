@@ -1,6 +1,7 @@
 develop: setup-git
 	pip install "file://`pwd`#egg=VAR_PACKAGE_NAME[dev]"
 	pip install -e .
+	pip install -r test_requirements.txt
 
 setup-git:
 	git config branch.autosetuprebase always

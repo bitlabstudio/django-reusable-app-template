@@ -1,5 +1,5 @@
 """URLs for the VAR_PACKAGE_NAME app."""
-# from django.conf.urls.defaults import patterns, url
+# from django.conf.urls import patterns, url
 
 # from . import views
 
