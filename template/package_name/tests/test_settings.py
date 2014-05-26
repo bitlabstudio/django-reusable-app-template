@@ -1,7 +1,10 @@
 """Settings that need to be set in order to run the tests."""
 import os
+import logging
 
 DEBUG = True
+
+logging.getLogger("factory").setLevel(logging.WARN)
 
 SITE_ID = 1
 
