@@ -7,11 +7,14 @@ Via ``settings.configure`` you will be able to set all necessary settings
 for your app and run the tests as if you were calling ``./manage.py test``.
 
 """
+import re
 import sys
 
 from django.conf import settings
 
 import coverage
+from fabric.api import abort, lcd, local
+from fabric.colors import green, red
 
 import test_settings
 
@@ -36,6 +39,21 @@ class NoseCoverageTestRunner(CoverageRunner, NoseTestSuiteRunner):
 def runtests(*test_args):
     failures = NoseCoverageTestRunner(verbosity=2, interactive=True).run_tests(
         test_args)
+
+    with lcd(settings.COVERAGE_REPORT_HTML_OUTPUT_DIR):
+        total_line = local('grep -n Total index.html', capture=True)
+        match = re.search(r'^(\d+):', total_line)
+        total_line_number = int(match.groups()[0])
+        percentage_line_number = total_line_number + 4
+        percentage_line = local(
+            'awk NR=={0} index.html'.format(percentage_line_number),
+            capture=True)
+        match = re.search(r'<td>(\d.+)%</td>', percentage_line)
+        percentage = float(match.groups()[0])
+    if percentage < 100:
+        abort(red('Coverage is {0}%'.format(percentage)))
+    print(green('Coverage is {0}%'.format(percentage)))
+
     sys.exit(failures)
 
 
