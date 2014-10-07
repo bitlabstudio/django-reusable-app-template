@@ -1,4 +1,4 @@
-=== (ongoing) ===
+=== 0.0.X (onggoing, to be released as 0.1) ===
 - Initial commit
 
 
@@ -14,10 +14,5 @@
 #   feature complete
 #
 # === 0.2 ===
-# - a minor version is created when new features or significant changes have
-#   been made to the software.
-#
-# === 0.1.1 ==
-# - for bugfix releases, fixing typos in the docs, restructuring things, simply
-#   anything that doesn't really change the behaviour of the software you
-#   might use the third digit which is also sometimes called the build number.
+# - a minor version is created when a lot of new features have bene added or
+#   significant backwards incompatible changes have been made.
