@@ -6,7 +6,9 @@ from django.test import TestCase
 
 class DummyModelTestCase(TestCase):
     """Tests for the ``DummyModel`` model."""
+    def setUp(self):
+        # self.obj = factories.DummyModelFactory()
+
     def test_model(self):
-        # obj = factories.DummyModelFactory()
-        # self.assertTrue(obj.pk)
+        # self.assertTrue(self.obj.pk)
         self.assertTrue(True)
