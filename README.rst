@@ -7,7 +7,7 @@ a few minutes.
 It was presented at PyCon Singapore 2013 for the first time, you can find the
 slides of the talk here: https://speakerdeck.com/mbrochh/writing-publishing-and-maintaining-reusable-django-apps
 
-A video of the talk can be found here: http://youtu.be/a4S1kTJfezA 
+A video of the talk can be found here: http://youtu.be/a4S1kTJfezA
 
 In order to kickstart your new reusable app, just do the following
 
@@ -37,7 +37,7 @@ Now you can run the tests
 
 .. code-block:: bash
 
-    ./your-app-name/tests/runtests.sh
+    ./your-app-name/tests/runtests.py
 
 Or you can initiate the database and preview your app in the browser
 
