@@ -6,4 +6,5 @@ include README.md
 graft VAR_PACKAGE_NAME
 global-exclude *.orig *.pyc *.log *.swp
 prune VAR_PACKAGE_NAME/tests/coverage
+recursive-include VAR_PACKAGE_NAME/templates *
 prune VAR_PACKAGE_NAME/.ropeproject
