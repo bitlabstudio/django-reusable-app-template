@@ -9,6 +9,10 @@ Unfortunately there seems to be an issue with either South or syncdb so that
 defining two routers ("default" and "south") does not work.
 
 """
+from distutils.version import StrictVersion
+
+import django
+
 from .test_settings import *  # NOQA
 
 
@@ -19,4 +23,6 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS.append('south', )
+django_version = django.get_version()
+if StrictVersion(django_version) < StrictVersion('1.7'):
+    INSTALLED_APPS.append('south', )
