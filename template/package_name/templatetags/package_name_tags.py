@@ -1,3 +1,4 @@
+"""Templatetags for the VAR_PACKAGE_NAME app."""
 from django import template
 
 register = template.Library()
