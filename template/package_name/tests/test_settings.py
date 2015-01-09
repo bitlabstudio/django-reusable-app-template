@@ -58,6 +58,12 @@ INTERNAL_APPS = [
 ]
 
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS
+
+MIDDLEWARE_CLASSES = [
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+]
+
 COVERAGE_MODULE_EXCLUDES += EXTERNAL_APPS
 
 SECRET_KEY = 'foobar'
