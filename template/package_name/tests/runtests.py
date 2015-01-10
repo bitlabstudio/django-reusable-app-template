@@ -23,9 +23,6 @@ import test_settings
 if not settings.configured:
     settings.configure(**test_settings.__dict__)
 
-if '1.7' in django.get_version():
-    django.setup()
-
 
 from django_coverage.coverage_runner import CoverageRunner
 from django_nose import NoseTestSuiteRunner
