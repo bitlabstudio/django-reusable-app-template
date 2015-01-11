@@ -1,10 +1,9 @@
-django-nose
 coverage
 django-coverage
-ipdb
-flake8
+django-nose
 fabric
-factory_boy
+flake8
+ipdb
+mixer
 mock
-selenium
 south

@@ -1,9 +1,11 @@
+*.coverage
 *.egg-info/
 *.pyc
-*.coverage
 *coverage/
+.tox/
+app_media/
+app_static/
 db.sqlite
 dist/
 docs/_build/
-app_media/
-app_static/
+local_settings.py

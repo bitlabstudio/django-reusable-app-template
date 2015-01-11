@@ -3,7 +3,8 @@ include LICENSE
 include DESCRIPTION
 include CHANGELOG.txt
 include README.md
+include tox.ini
 graft VAR_PACKAGE_NAME
-global-exclude *.orig *.pyc *.log *.swp
+global-exclude *.orig *.pyc *.log *.swp local_settings.py
 prune VAR_PACKAGE_NAME/tests/coverage
 prune VAR_PACKAGE_NAME/.ropeproject
