@@ -1,13 +1,31 @@
 language: python
+
 python:
-  - "2.7"
+    - "2.7"
+    - "3.4"
+
+env:
+    - DJANGO=django==1.4.*
+    - DJANGO=django==1.5.*
+    - DJANGO=django==1.6.*
+    - DJANGO=django==1.7.*
+    - DJANGO=django==1.8.*
+
 install: 
-  - pip install -r test_requirements.txt --use-mirrors
-  - pip install coveralls
+    - pip install -r test_requirements.txt --use-mirrors
+    - pip install $DJANGO
+    - pip install coveralls
+
 script:
-  - cd VAR_PACKAGE_NAME/tests
-  - ./runtests.py
-  - mv .coverage ../../
-  - cd ../../
+    - cd VAR_PACKAGE_NAME/tests
+    - ./runtests.py
+    - mv .coverage ../../
+    - cd ../../
+
+matrix:
+    exclude:
+        - python: "3.4"
+          env: DJANGO=django==1.4.*
+
 after_success: 
-  - coveralls
+    - coveralls
