@@ -10,6 +10,8 @@ for your app and run the tests as if you were calling ``./manage.py test``.
 import re
 import sys
 
+
+import django
 from django.conf import settings
 
 import coverage
@@ -37,6 +39,8 @@ class NoseCoverageTestRunner(CoverageRunner, NoseTestSuiteRunner):
 
 
 def runtests(*test_args):
+    if django.VERSION >= (1, 7):
+        django.setup()
     failures = NoseCoverageTestRunner(verbosity=2, interactive=True).run_tests(
         test_args)
 
