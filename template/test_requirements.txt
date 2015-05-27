@@ -8,3 +8,6 @@ mixer
 mock
 south
 tox
+django
+django-compat
+six
