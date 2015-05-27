@@ -1,5 +1,5 @@
 """URLs to run the tests."""
-from django.conf.urls import patterns, include, url
+from compat import patterns, include, url
 from django.contrib import admin
 
 
