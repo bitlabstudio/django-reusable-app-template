@@ -4,6 +4,7 @@ include DESCRIPTION
 include CHANGELOG.txt
 include README.md
 include tox.ini
+include requirements.txt
 graft VAR_PACKAGE_NAME
 global-exclude *.orig *.pyc *.log *.swp local_settings.py
 prune VAR_PACKAGE_NAME/tests/coverage

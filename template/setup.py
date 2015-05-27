@@ -36,9 +36,7 @@ dev_requires = [
     'flake8',
 ]
 
-install_requires = [
-    'django',
-]
+install_requires = open('requirements.txt').read().splitlines()
 
 
 def read(fname):
