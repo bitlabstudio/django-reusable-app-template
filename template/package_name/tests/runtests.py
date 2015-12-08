@@ -9,21 +9,15 @@ for your app and run the tests as if you were calling ``./manage.py test``.
 """
 import re
 import sys
-
-
 import django
 from django.conf import settings
-
 import coverage
 from fabric.api import abort, lcd, local
 from fabric.colors import green, red
-
 import test_settings
-
 
 if not settings.configured:
     settings.configure(**test_settings.__dict__)
-
 
 from django_coverage.coverage_runner import CoverageRunner
 from django_nose import NoseTestSuiteRunner
@@ -31,6 +25,7 @@ from django_nose import NoseTestSuiteRunner
 
 class NoseCoverageTestRunner(CoverageRunner, NoseTestSuiteRunner):
     """Custom test runner that uses nose and coverage"""
+
     def run_tests(self, *args, **kwargs):
         results = super(NoseCoverageTestRunner, self).run_tests(
             *args, **kwargs)
@@ -41,6 +36,11 @@ class NoseCoverageTestRunner(CoverageRunner, NoseTestSuiteRunner):
 def runtests(*test_args):
     if django.VERSION >= (1, 7):
         django.setup()
+
+    local(
+        'flake8 --ignore=E126 --ignore=W391 --statistics'
+        ' --exclude=submodules,migrations,build .')
+
     failures = NoseCoverageTestRunner(verbosity=2, interactive=True).run_tests(
         test_args)
 
