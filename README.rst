@@ -30,21 +30,26 @@ After this you can create the virtual environment or your app
 .. code-block:: bash
 
     mkvirtualenv -p python2.7 your-app-name
-    python setup.py install
-    pip install -r test_requirements.txt
+    make develop
 
-Now you can run the tests
+Now you can run the tests. You might want to modify `tox.ini` so that it only
+runs tests for Python/Django versions that you intend to support.
 
 .. code-block:: bash
 
-    ./your-app-name/tests/runtests.py
+    tox
 
 Or you can initiate the database and preview your app in the browser
 
 .. code-block:: bash
 
+    # Django < 1.8:
     ./manage.py syncdb --all
     ./manage.py migrate --fake
+
+    # Django >= 1.8:
+    ./manage.py syncdb
+
     ./manage.py runserver
 
 The only URL that is hooked up will be the admin url, so you can open
