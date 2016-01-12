@@ -78,5 +78,5 @@ If you want to contribute to this project, please perform the following steps
     # Send us a pull request for your feature branch
 
 In order to run the tests, simply execute ``tox``. This will install two new
-environments (for Django 1.6 and Django 1.7) and run the tests against both
+environments (for Django 1.7 and Django 1.8) and run the tests against both
 environments.

@@ -4,7 +4,6 @@ flake8
 ipdb
 mixer
 mock
-south
 tox
 django-compat
 six

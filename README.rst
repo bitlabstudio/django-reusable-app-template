@@ -48,7 +48,7 @@ Or you can initiate the database and preview your app in the browser
     ./manage.py migrate --fake
 
     # Django >= 1.8:
-    ./manage.py syncdb
+    ./manage.py migrate
 
     ./manage.py runserver
 
