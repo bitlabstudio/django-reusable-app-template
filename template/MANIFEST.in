@@ -6,6 +6,7 @@ include README.md
 include tox.ini
 include runtests.py
 include requirements.txt
+include test_requirements.txt
 graft VAR_PACKAGE_NAME
 global-exclude *.orig *.pyc *.log *.swp local_settings.py
 prune VAR_PACKAGE_NAME/tests/coverage
