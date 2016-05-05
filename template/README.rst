@@ -33,10 +33,9 @@ Add the ``VAR_PACKAGE_NAME`` URLs to your ``urls.py``
 
 .. code-block:: python
 
-    urlpatterns = patterns('',
-        ...
+    urlpatterns = [
         url(r'^VAR_URL_HOOK/', include('VAR_PACKAGE_NAME.urls')),
-    )
+    ]
 
 Before your tags/filters are available in your templates, load them by using
 
